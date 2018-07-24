@@ -18,9 +18,9 @@ public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
-        dumpedPrivateKeyHeader = 128;
-        addressHeader = 58;
-        p2shHeader = 50;
+        dumpedPrivateKeyHeader = 169;
+        addressHeader = 41;
+        p2shHeader = 100;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         port = 8333;
         packetMagic = 0xf9beb4d9L;
