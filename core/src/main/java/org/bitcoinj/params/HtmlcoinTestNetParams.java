@@ -19,8 +19,8 @@ public class HtmlcoinTestNetParams extends AbstractBitcoinNetParams {
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
-        dumpedPrivateKeyHeader = 239;
-        addressHeader = 120;
+        dumpedPrivateKeyHeader = 238;
+        addressHeader = 100;
         p2shHeader = 110;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         port = 8333;
