@@ -8,12 +8,12 @@ import java.net.*;
 import static com.google.common.base.Preconditions.*;
 
 
-public class QtumMainNetParams extends AbstractBitcoinNetParams {
+public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
     public static final int MAINNET_MAJORITY_WINDOW = 1000;
     public static final int MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED = 950;
     public static final int MAINNET_MAJORITY_ENFORCE_BLOCK_UPGRADE = 750;
 
-    public QtumMainNetParams() {
+    public HtmlcoinMainNetParams() {
         super();
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
@@ -34,7 +34,7 @@ public class QtumMainNetParams extends AbstractBitcoinNetParams {
         genesisBlock.setDifficultyTarget(0x1d00ffffL);
         genesisBlock.setTime(1231006505L);
         genesisBlock.setNonce(2083236893);
-        id = ID_QTUM_MAINNET;
+        id = ID_HTMLCOIN_MAINNET;
         subsidyDecreaseBlockCount = 210000;
         spendableCoinbaseDepth = 100;
         String genesisHash = genesisBlock.getHashAsString();
@@ -112,10 +112,10 @@ public class QtumMainNetParams extends AbstractBitcoinNetParams {
         };
     }
 
-    private static QtumMainNetParams instance;
-    public static synchronized QtumMainNetParams get() {
+    private static HtmlcoinMainNetParams instance;
+    public static synchronized HtmlcoinMainNetParams get() {
         if (instance == null) {
-            instance = new QtumMainNetParams();
+            instance = new HtmlcoinMainNetParams();
         }
         return instance;
     }
