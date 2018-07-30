@@ -34,7 +34,7 @@ public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
         genesisBlock.setDifficultyTarget(0x1d00ffffL);
         genesisBlock.setTime(1506211200L);
         genesisBlock.setNonce(94371);
-        id = ID_HTMLCOIN_MAINNET;
+        id = ID_HTML_MAINNET;
         subsidyDecreaseBlockCount = 210000;
         spendableCoinbaseDepth = 100;
         String genesisHash = genesisBlock.getHashAsString();
