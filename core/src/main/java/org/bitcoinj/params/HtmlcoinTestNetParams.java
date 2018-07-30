@@ -35,7 +35,7 @@ public class HtmlcoinTestNetParams extends AbstractBitcoinNetParams {
         genesisBlock.setDifficultyTarget(0x1d00ffffL);
         genesisBlock.setTime(1506212200L);
         genesisBlock.setNonce(102232);
-        id = ID_HTMLCOIN_TESTNET;
+        id = ID_HTML_TESTNET;
         subsidyDecreaseBlockCount = 210000;
         spendableCoinbaseDepth = 100;
         String genesisHash = genesisBlock.getHashAsString();
