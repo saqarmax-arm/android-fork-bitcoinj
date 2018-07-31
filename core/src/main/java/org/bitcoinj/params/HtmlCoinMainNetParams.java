@@ -1,29 +1,32 @@
 package org.bitcoinj.params;
 
-import org.bitcoinj.core.*;
-import org.bitcoinj.net.discovery.*;
+import org.bitcoinj.core.ECKey;
+import org.bitcoinj.core.Sha256Hash;
+import org.bitcoinj.core.Utils;
+import org.bitcoinj.net.discovery.HttpDiscovery;
+import org.bitcoinj.params.AbstractBitcoinNetParams;
 
-import java.net.*;
+import java.net.URI;
 
-import static com.google.common.base.Preconditions.*;
+import static com.google.common.base.Preconditions.checkState;
 
 
-public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
+public class HtmlCoinMainNetParams extends AbstractBitcoinNetParams {
     public static final int MAINNET_MAJORITY_WINDOW = 1000;
     public static final int MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED = 950;
     public static final int MAINNET_MAJORITY_ENFORCE_BLOCK_UPGRADE = 750;
 
-    public HtmlcoinMainNetParams() {
+    public HtmlCoinMainNetParams() {
         super();
-        interval = INTERVAL;
-        targetTimespan = TARGET_TIMESPAN;
+        interval = INTERVAL; //TODO
+        targetTimespan = TARGET_TIMESPAN; //TODO
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
         dumpedPrivateKeyHeader = 169;
-        addressHeader = 41;
+        addressHeader = 41; // chainparams.cpp, line 173
         p2shHeader = 100;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         port = 4888;
-        packetMagic = 0xf9beb4d9L;
+        packetMagic = 0xf9beb4d9L; //TODO
         bip32HeaderPub = 0x1397C10D; //The 4 byte header that serializes in base58 to "xpub".
         bip32HeaderPriv = 0x1397BCF3; //The 4 byte header that serializes in base58 to "xprv"
 
@@ -31,15 +34,14 @@ public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
         majorityRejectBlockOutdated = MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED;
         majorityWindow = MAINNET_MAJORITY_WINDOW;
 
-        genesisBlock.setDifficultyTarget(0x1d00ffffL);
+        genesisBlock.setDifficultyTarget(0x1f00ffffL);
         genesisBlock.setTime(1506211200L);
         genesisBlock.setNonce(94371);
         id = ID_HTML_MAINNET;
-        subsidyDecreaseBlockCount = 210000;
-        spendableCoinbaseDepth = 100;
+        subsidyDecreaseBlockCount = 210000; // TODO:
+        spendableCoinbaseDepth = 100; //TODO
         String genesisHash = genesisBlock.getHashAsString();
-        // checkState(genesisHash.equals("000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"),
-        //        genesisHash);
+//        checkState(genesisHash.equals("0000bf23c6424c270a24a17a3db723361c349e0f966d7b55a6bca4bfb2d951b0"), genesisHash);
 
         // This contains (at a minimum) the blocks which are not BIP30 compliant. BIP30 changed how duplicate
         // transactions are handled. Duplicated transactions could occur in the case where a coinbase had the same
@@ -47,16 +49,13 @@ public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
         // Having these here simplifies block connection logic considerably.
         checkpoints.put(0, Sha256Hash.wrap("0000bf23c6424c270a24a17a3db723361c349e0f966d7b55a6bca4bfb2d951b0"));
         checkpoints.put(798, Sha256Hash.wrap("00002847d05b6fe46570b754815309123bedcb84a5ac2ae58fa1d38957ccb772"));
-        checkpoints.put(211401, Sha256Hash.wrap("00000000000a2142cf5781b89170e7fd2d1fb22b92a7f3878e8199378e32a54b"));
-        checkpoints.put(91880, Sha256Hash.wrap("00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721"));
-        checkpoints.put(308971, Sha256Hash.wrap("000000000002e13479422a602499ceff5699ae3bb21bc5ebf2b12257d3da7b4e"));
 
         dnsSeeds = new String[] {
                 "seed1.htmlcoin.com",
-                "seed2.htmlcoin.com",
-                "seed3.htmlcoin.com",
-                "seed4.htmlcoin.com",
+                "seed2.htmlcoin.com"
         };
+
+        //TODO
         httpSeeds = new HttpDiscovery.Details[] {
                 // Andreas Schildbach
                 new HttpDiscovery.Details(
@@ -65,6 +64,7 @@ public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
                 )
         };
 
+        //TODO
         addrSeeds = new int[] {
                 0x1ddb1032, 0x6242ce40, 0x52d6a445, 0x2dd7a445, 0x8a53cd47, 0x73263750, 0xda23c257, 0xecd4ed57,
                 0x0a40ec59, 0x75dce160, 0x7df76791, 0x89370bad, 0xa4f214ad, 0x767700ae, 0x638b0418, 0x868a1018,
@@ -109,10 +109,10 @@ public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
         };
     }
 
-    private static HtmlcoinMainNetParams instance;
-    public static synchronized HtmlcoinMainNetParams get() {
+    private static HtmlCoinMainNetParams instance;
+    public static synchronized HtmlCoinMainNetParams get() {
         if (instance == null) {
-            instance = new HtmlcoinMainNetParams();
+            instance = new HtmlCoinMainNetParams();
         }
         return instance;
     }
