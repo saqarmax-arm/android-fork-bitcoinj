@@ -39,7 +39,7 @@ public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
         genesisBlock.setNonce(94371);
         id = ID_HTMLCOIN_MAINNET;
         subsidyDecreaseBlockCount = 210000; // TODO:
-        spendableCoinbaseDepth = 100; //TODO
+        spendableCoinbaseDepth = 500; //TODO
         String genesisHash = genesisBlock.getHashAsString();
 //        checkState(genesisHash.equals("0000bf23c6424c270a24a17a3db723361c349e0f966d7b55a6bca4bfb2d951b0"), genesisHash);
 
