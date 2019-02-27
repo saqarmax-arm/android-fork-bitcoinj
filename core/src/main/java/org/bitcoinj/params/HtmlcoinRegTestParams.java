@@ -9,12 +9,12 @@ import org.bitcoinj.params.AbstractBitcoinNetParams;
 import java.net.URI;
 
 
-public class HtmlCoinRegTestParams extends AbstractBitcoinNetParams {
+public class HtmlcoinRegTestParams extends AbstractBitcoinNetParams {
     public static final int MAINNET_MAJORITY_WINDOW = 1000;
     public static final int MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED = 950;
     public static final int MAINNET_MAJORITY_ENFORCE_BLOCK_UPGRADE = 750;
 
-    public HtmlCoinRegTestParams() {
+    public HtmlcoinRegTestParams() {
         super();
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
@@ -35,7 +35,7 @@ public class HtmlCoinRegTestParams extends AbstractBitcoinNetParams {
         genesisBlock.setDifficultyTarget(0x207fffffL);
         genesisBlock.setTime(1506213200L);
         genesisBlock.setNonce(2);
-        id = ID_HTML_REGTEST;
+        id = ID_HTMLCOIN_REGTEST;
         subsidyDecreaseBlockCount = 210000;
         spendableCoinbaseDepth = 100;
         String genesisHash = genesisBlock.getHashAsString();
@@ -52,10 +52,10 @@ public class HtmlCoinRegTestParams extends AbstractBitcoinNetParams {
         addrSeeds = new int[] {};
     }
 
-    private static HtmlCoinRegTestParams instance;
-    public static synchronized HtmlCoinRegTestParams get() {
+    private static HtmlcoinRegTestParams instance;
+    public static synchronized HtmlcoinRegTestParams get() {
         if (instance == null) {
-            instance = new HtmlCoinRegTestParams();
+            instance = new HtmlcoinRegTestParams();
         }
         return instance;
     }
