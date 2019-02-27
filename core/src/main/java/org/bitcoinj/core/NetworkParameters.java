@@ -69,11 +69,11 @@ public abstract class NetworkParameters {
     public static final String ID_WHITECOIN_NET = "org.bitcoinj.whitecoin_net";
 
     /** The string returned by getId() for the Html mainnet. */
-    public static final String ID_HTML_MAINNET = "org.bitcoinj.html_mainnet";
+    public static final String ID_HTMLCOIN_MAINNET = "org.bitcoinj.htmlcoin_mainnet";
 
     /** The string returned by getId() for the Html mainnet. */
-    public static final String ID_HTML_TESTNET = "org.bitcoinj.html_testnet";
-    public static final String ID_HTML_REGTEST = "org.bitcoinj.html_regtest";
+    public static final String ID_HTMLCOIN_TESTNET = "org.bitcoinj.htmlcoin_testnet";
+    public static final String ID_HTMLCOIN_REGTEST = "org.bitcoinj.htmlcoin_regtest";
 
     /** The string used by the payment protocol to represent the main net. */
     public static final String PAYMENT_PROTOCOL_ID_MAINNET = "main";
@@ -245,11 +245,11 @@ public abstract class NetworkParameters {
             return QtumTestNetParams.get();
         } else if(id.equals(ID_WHITECOIN_NET)){
 	    return WhiteCoinNetParams.get();
-        } else if (id.equals(ID_HTML_MAINNET)) {
+        } else if (id.equals(ID_HTMLCOIN_MAINNET)) {
             return HtmlcoinMainNetParams.get();
-        } else if (id.equals(ID_HTML_TESTNET)) {
+        } else if (id.equals(ID_HTMLCOIN_TESTNET)) {
             return HtmlcoinTestNetParams.get();
-		} else if (id.equals(ID_HTML_REGTEST)) {
+		} else if (id.equals(ID_HTMLCOIN_REGTEST)) {
             return HtmlcoinRegTestParams.get();
         } else{
             return null;
