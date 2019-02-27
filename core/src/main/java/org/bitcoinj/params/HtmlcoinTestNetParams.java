@@ -10,12 +10,12 @@ import java.net.URI;
 import static com.google.common.base.Preconditions.checkState;
 
 
-public class HtmlCoinTestNetParams extends AbstractBitcoinNetParams {
+public class HtmlcoinTestNetParams extends AbstractBitcoinNetParams {
     public static final int MAINNET_MAJORITY_WINDOW = 1000;
     public static final int MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED = 950;
     public static final int MAINNET_MAJORITY_ENFORCE_BLOCK_UPGRADE = 750;
 
-    public HtmlCoinTestNetParams() {
+    public HtmlcoinTestNetParams() {
         super();
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
@@ -36,7 +36,7 @@ public class HtmlCoinTestNetParams extends AbstractBitcoinNetParams {
         genesisBlock.setDifficultyTarget(0x1f00ffffL);
         genesisBlock.setTime(1506212200L);
         genesisBlock.setNonce(102232);
-        id = ID_HTML_TESTNET;
+        id = ID_HTMLCOIN_TESTNET;
         subsidyDecreaseBlockCount = 210000;
         spendableCoinbaseDepth = 100;
         String genesisHash = genesisBlock.getHashAsString();
@@ -104,10 +104,10 @@ public class HtmlCoinTestNetParams extends AbstractBitcoinNetParams {
         };
     }
 
-    private static HtmlCoinTestNetParams instance;
-    public static synchronized HtmlCoinTestNetParams get() {
+    private static HtmlcoinTestNetParams instance;
+    public static synchronized HtmlcoinTestNetParams get() {
         if (instance == null) {
-            instance = new HtmlCoinTestNetParams();
+            instance = new HtmlcoinTestNetParams();
         }
         return instance;
     }
