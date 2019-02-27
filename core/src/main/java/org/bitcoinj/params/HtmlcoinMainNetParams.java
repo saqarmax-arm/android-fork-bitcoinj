@@ -11,12 +11,12 @@ import java.net.URI;
 import static com.google.common.base.Preconditions.checkState;
 
 
-public class HtmlCoinMainNetParams extends AbstractBitcoinNetParams {
+public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
     public static final int MAINNET_MAJORITY_WINDOW = 1000;
     public static final int MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED = 950;
     public static final int MAINNET_MAJORITY_ENFORCE_BLOCK_UPGRADE = 750;
 
-    public HtmlCoinMainNetParams() {
+    public HtmlcoinMainNetParams() {
         super();
         interval = INTERVAL; //TODO
         targetTimespan = TARGET_TIMESPAN; //TODO
@@ -37,7 +37,7 @@ public class HtmlCoinMainNetParams extends AbstractBitcoinNetParams {
         genesisBlock.setDifficultyTarget(0x1f00ffffL);
         genesisBlock.setTime(1506211200L);
         genesisBlock.setNonce(94371);
-        id = ID_HTML_MAINNET;
+        id = ID_HTMLCOIN_MAINNET;
         subsidyDecreaseBlockCount = 210000; // TODO:
         spendableCoinbaseDepth = 100; //TODO
         String genesisHash = genesisBlock.getHashAsString();
@@ -52,7 +52,9 @@ public class HtmlCoinMainNetParams extends AbstractBitcoinNetParams {
 
         dnsSeeds = new String[] {
                 "seed1.htmlcoin.com",
-                "seed2.htmlcoin.com"
+                "seed2.htmlcoin.com",
+                "seed3.htmlcoin.com",
+                "seed4.htmlcoin.com"
         };
 
         //TODO
@@ -109,10 +111,10 @@ public class HtmlCoinMainNetParams extends AbstractBitcoinNetParams {
         };
     }
 
-    private static HtmlCoinMainNetParams instance;
-    public static synchronized HtmlCoinMainNetParams get() {
+    private static HtmlcoinMainNetParams instance;
+    public static synchronized HtmlcoinMainNetParams get() {
         if (instance == null) {
-            instance = new HtmlCoinMainNetParams();
+            instance = new HtmlcoinMainNetParams();
         }
         return instance;
     }
