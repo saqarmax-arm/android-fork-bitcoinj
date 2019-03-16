@@ -68,6 +68,13 @@ public abstract class NetworkParameters {
 	/** The string returned by getId() for the WhiteCoin netparams. */
     public static final String ID_WHITECOIN_NET = "org.bitcoinj.whitecoin_net";
 
+    /** The string returned by getId() for the Html mainnet. */
+    public static final String ID_HTMLCOIN_MAINNET = "org.bitcoinj.htmlcoin_mainnet";
+
+    /** The string returned by getId() for the Html mainnet. */
+    public static final String ID_HTMLCOIN_TESTNET = "org.bitcoinj.htmlcoin_testnet";
+    public static final String ID_HTMLCOIN_REGTEST = "org.bitcoinj.htmlcoin_regtest";
+
     /** The string used by the payment protocol to represent the main net. */
     public static final String PAYMENT_PROTOCOL_ID_MAINNET = "main";
     /** The string used by the payment protocol to represent the test net. */
@@ -157,7 +164,7 @@ public abstract class NetworkParameters {
     /**
      * The maximum number of coins to be generated
      */
-    public static final long MAX_COINS = 21000000;
+    public static final long MAX_COINS = 90000000000L;
 
     /**
      * The maximum money to be generated
@@ -237,8 +244,14 @@ public abstract class NetworkParameters {
         } else if (id.equals(ID_QTUM_TESTNET)) {
             return QtumTestNetParams.get();
         } else if(id.equals(ID_WHITECOIN_NET)){
-			return WhiteCoinNetParams.get();
-		}else{
+	    return WhiteCoinNetParams.get();
+        } else if (id.equals(ID_HTMLCOIN_MAINNET)) {
+            return HtmlcoinMainNetParams.get();
+        } else if (id.equals(ID_HTMLCOIN_TESTNET)) {
+            return HtmlcoinTestNetParams.get();
+		} else if (id.equals(ID_HTMLCOIN_REGTEST)) {
+            return HtmlcoinRegTestParams.get();
+        } else{
             return null;
         }
     }
@@ -538,10 +551,10 @@ public abstract class NetworkParameters {
     public abstract int getProtocolVersionNum(final ProtocolVersion version);
 
     public static enum ProtocolVersion {
-        MINIMUM(70000),
-        PONG(60001),
-        BLOOM_FILTER(70000),
-        CURRENT(70001);
+        MINIMUM(70007),
+        PONG(70007),
+        BLOOM_FILTER(70007),
+        CURRENT(70007);
 
         private final int bitcoinProtocol;
 
