@@ -24,7 +24,7 @@ public class HtmlcoinRegTestParams extends AbstractBitcoinNetParams {
         p2shHeader = 110;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         port = 4889;
-        packetMagic = 0xf9beb4d9L;
+        packetMagic = 0x3f4e5d6c;
         bip32HeaderPub = 0x043587CF; //The 4 byte header that serializes in base58 to "xpub".
         bip32HeaderPriv = 0x04358394; //The 4 byte header that serializes in base58 to "xprv"
 
