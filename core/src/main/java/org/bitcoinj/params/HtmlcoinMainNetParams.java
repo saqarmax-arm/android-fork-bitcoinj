@@ -26,7 +26,7 @@ public class HtmlcoinMainNetParams extends AbstractBitcoinNetParams {
         p2shHeader = 100;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         port = 4888;
-        packetMagic = 0xf9beb4d9L; //TODO
+        packetMagic = 0x1f2e3d4c; //TODO
         bip32HeaderPub = 0x1397C10D; //The 4 byte header that serializes in base58 to "xpub".
         bip32HeaderPriv = 0x1397BCF3; //The 4 byte header that serializes in base58 to "xprv"
 
