@@ -37,8 +37,8 @@ public class CcscoinMainNetParams extends AbstractBitcoinNetParams {
         genesisBlock.setDifficultyTarget(0x1f00ffff);
         genesisBlock.setTime(1615675313L);
         genesisBlock.setNonce(131239);
-        id = ID_HTMLCOIN_MAINNET;
-        subsidyDecreaseBlockCount = 985000; // TODO:
+        id = ID_CCSCOIN_MAINNET;
+        subsidyDecreaseBlockCount = 985500; // TODO:
         spendableCoinbaseDepth = 500; //TODO
         String genesisHash = genesisBlock.getHashAsString();
         checkState(genesisHash.equals("0000da969e2b14a964ea496e122b304fcc636b6c7f6301c32327fc8b4a84675c"), genesisHash);

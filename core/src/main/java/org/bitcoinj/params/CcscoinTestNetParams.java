@@ -10,22 +10,22 @@ import java.net.URI;
 import static com.google.common.base.Preconditions.checkState;
 
 
-public class HtmlcoinTestNetParams extends AbstractBitcoinNetParams {
+public class CcscoinTestNetParams extends AbstractBitcoinNetParams {
     public static final int MAINNET_MAJORITY_WINDOW = 1000;
     public static final int MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED = 950;
     public static final int MAINNET_MAJORITY_ENFORCE_BLOCK_UPGRADE = 750;
 
-    public HtmlcoinTestNetParams() {
+    public CcscoinTestNetParams() {
         super();
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
         dumpedPrivateKeyHeader = 239;
-        addressHeader = 120;
-        p2shHeader = 110;
+        addressHeader = 88;
+        p2shHeader = 111;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
-        port = 14888;
-        packetMagic = 0x2f3e4d5c;
+        port = 15888;
+        packetMagic = 0xcee2caff;
         bip32HeaderPub = 0x043587CF; //The 4 byte header that serializes in base58 to "xpub".
         bip32HeaderPriv = 0x04358394; //The 4 byte header that serializes in base58 to "xprv"
 
@@ -34,23 +34,21 @@ public class HtmlcoinTestNetParams extends AbstractBitcoinNetParams {
         majorityWindow = MAINNET_MAJORITY_WINDOW;
 
         genesisBlock.setDifficultyTarget(0x1f00ffffL);
-        genesisBlock.setTime(1506212200L);
-        genesisBlock.setNonce(102232);
-        id = ID_HTMLCOIN_TESTNET;
-        subsidyDecreaseBlockCount = 210000;
-        spendableCoinbaseDepth = 100;
-        String genesisHash = genesisBlock.getHashAsString();
-//        checkState(genesisHash.equals("000013694772f8aeb88efeb2829fe5d71fbca3e23d5043baa770726f204f528c"), genesisHash);
+        genesisBlock.setTime(1615675466L);
+        genesisBlock.setNonce(77382);
+        id = ID_CCSCOIN_TESTNET;
+        subsidyDecreaseBlockCount = 985500;
+        spendableCoinbaseDepth = 500;
+        String genesisHash = genesisBlock.getHashAsString();        checkState(genesisHash.equals("00009a0d65aff147f8af9ca00b768c2afbdfa275d0e041c7ee09d7466e7b38c2"), genesisHash);
 
         // This contains (at a minimum) the blocks which are not BIP30 compliant. BIP30 changed how duplicate
         // transactions are handled. Duplicated transactions could occur in the case where a coinbase had the same
         // extraNonce and the same outputs but appeared at different heights, and greatly complicated re-org handling.
         // Having these here simplifies block connection logic considerably.
-        checkpoints.put(0, Sha256Hash.wrap("000013694772f8aeb88efeb2829fe5d71fbca3e23d5043baa770726f204f528c"));
+        checkpoints.put(0, Sha256Hash.wrap("00009a0d65aff147f8af9ca00b768c2afbdfa275d0e041c7ee09d7466e7b38c2"));
 
         dnsSeeds = new String[] {
-                "testnet-seed1.htmlcoin.com",
-                "testnet-seed2.htmlcoin.com"
+                "testnet-ccs1.ddnsguru.com"
         };
         httpSeeds = new HttpDiscovery.Details[] {
                 // Andreas Schildbach
@@ -104,10 +102,10 @@ public class HtmlcoinTestNetParams extends AbstractBitcoinNetParams {
         };
     }
 
-    private static HtmlcoinTestNetParams instance;
-    public static synchronized HtmlcoinTestNetParams get() {
+    private static CcscoinTestNetParams instance;
+    public static synchronized CcscoinTestNetParams get() {
         if (instance == null) {
-            instance = new HtmlcoinTestNetParams();
+            instance = new CcscoinTestNetParams();
         }
         return instance;
     }

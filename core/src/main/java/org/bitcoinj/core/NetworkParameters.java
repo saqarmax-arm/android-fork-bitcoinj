@@ -172,7 +172,7 @@ public abstract class NetworkParameters {
     /**
      * The maximum number of coins to be generated
      */
-    public static final long MAX_COINS = 90000000000L;
+    public static final long MAX_COINS = 65000000L;
 
     /**
      * The maximum money to be generated
@@ -567,10 +567,10 @@ public abstract class NetworkParameters {
     public abstract int getProtocolVersionNum(final ProtocolVersion version);
 
     public static enum ProtocolVersion {
-        MINIMUM(70007),
-        PONG(70007),
-        BLOOM_FILTER(70007),
-        CURRENT(70007);
+        MINIMUM(72020),
+        PONG(72020),
+        BLOOM_FILTER(72020),
+        CURRENT(72020);
 
         private final int bitcoinProtocol;
 
