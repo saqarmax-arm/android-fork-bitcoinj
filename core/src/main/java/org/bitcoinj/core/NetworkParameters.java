@@ -75,6 +75,14 @@ public abstract class NetworkParameters {
     public static final String ID_HTMLCOIN_TESTNET = "org.bitcoinj.htmlcoin_testnet";
     public static final String ID_HTMLCOIN_REGTEST = "org.bitcoinj.htmlcoin_regtest";
 
+
+    /** The string returned by getId() for the CcS mainnet. */
+    public static final String ID_CCSCOIN_MAINNET = "org.bitcoinj.ccscoin_mainnet";
+
+    /** The string returned by getId() for the CcS mainnet. */
+    public static final String ID_CCSCOIN_TESTNET = "org.bitcoinj.ccscoin_testnet";
+    public static final String ID_CCSCOIN_REGTEST = "org.bitcoinj.ccscoin_regtest";
+
     /** The string used by the payment protocol to represent the main net. */
     public static final String PAYMENT_PROTOCOL_ID_MAINNET = "main";
     /** The string used by the payment protocol to represent the test net. */
@@ -251,7 +259,15 @@ public abstract class NetworkParameters {
             return HtmlcoinTestNetParams.get();
 		} else if (id.equals(ID_HTMLCOIN_REGTEST)) {
             return HtmlcoinRegTestParams.get();
-        } else{
+        }
+	else if (id.equals(ID_CCSCOIN_MAINNET)) {
+            return CcscoinMainNetParams.get();
+        } else if (id.equals(ID_CCSCOIN_TESTNET)) {
+            return CcscoinTestNetParams.get();
+		} else if (id.equals(ID_CCSCOIN_REGTEST)) {
+            return CcscoinRegTestParams.get();
+        }
+	 else{
             return null;
         }
     }
